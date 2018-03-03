@@ -1,9 +1,10 @@
 # HealthIndeX
 Healthindex a module for calculating health and medical indices
-Body Mass Index (BMI)
-Body Build Index (BBI)
-Body Adipose Index (BAI)
-Corpulence Index (CI)
+
+	Body Mass Index (BMI)
+	Body Build Index (BBI)
+	Body Adipose Index (BAI)
+	Corpulence Index (CI)
 
 
 ### usage:
