@@ -10,8 +10,8 @@ Corpulence Index (CI)
 using HealthIndeX
 
 ##### calculating body mass index
-+ First Method
+     + First Method
   bodymassindex(mass,height)
-
-+ Short Method
+  
+      + Short Method
   bmi(mass,height)
