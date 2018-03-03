@@ -11,7 +11,7 @@ using HealthIndeX
 
 ##### calculating body mass index
 + First Method
-bodymassindex(mass,height)
+  bodymassindex(mass,height)
 
 + Short Method
-bmi(mass,height)
+  bmi(mass,height)
