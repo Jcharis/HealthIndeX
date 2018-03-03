@@ -1,5 +1,5 @@
 # HealthIndeX
-Healthindex a module for calculating health and medical indices
+HealthindeX is a module for calculating health and medical indices
 
 	Body Mass Index (BMI)
 	Body Build Index (BBI)
