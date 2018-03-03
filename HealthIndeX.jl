@@ -15,7 +15,8 @@
 
 module HealthIndeX
 
-export bmi,bodymassindex,bai,bodyadiposeindex,bsi,bodyshapeindex,tbw,totalbodywater,corpulence_index,pignetindex,bbi,bodybuildindex
+export bmi,bodymassindex,bai,bodyadiposeindex,bsi,bodyshapeindex,tbw,totalbodywater,corpulence_index,pignetindex,bbi,bodybuildindex,
+perinatal_mortality,infant_mortality,child_mortality,maternal_mortality,maternal_mortality_ratio
 
 #Body Mass Index
 #that abdominal obesity is defined as a waist–hip ratio above 0.90 for males and above 0.85 for females, or a body mass index (BMI) above 30.0
@@ -162,6 +163,57 @@ function bbi(height::Number,weight::Number,chest_circumference::Number)
 	pignetindex_formula = height - (weight + chest_circumference)
 	println("Pignet Index=>",pignetindex_formula)
 end
+
+
+
+## Perinatal mortality rate – the sum of neonatal deaths and fetal deaths (stillbirths) per 1,000 births.
+# Maternal mortality ratio – the number of maternal deaths per 100,000 live births in same time period.
+# Maternal mortality rate – the number of maternal deaths per 1,000 women of reproductive age in the population (generally defined as 15–44 years of age).
+# Infant mortality rate – the number of deaths of children less than 1 year old per 1,000 live births.
+# Child mortality rate: the number of deaths of children less than 5 years old per 1,000 live births.
+
+
+# Mortality rate
+# Perinatal the sum of neonatal deaths and fetal deaths (stillbirths) per 1,000 births.
+function  perinatal_mortality(neonatal_deaths::Int...)
+	perinatal_mortality_formula = sum(neonatal_deaths)/1000 * 100
+	println("Perinatal Mortality=>",perinatal_mortality_formula,"%")
+
+end
+
+
+# Maternal mortality ratio
+function maternal_mortality_ratio(num_maternal_deaths::Int)
+	maternal_mortality_formula = num_maternal_deaths/100000 
+	println("Maternal Mortality Ratio=>",maternal_mortality_formula)
+end
+
+
+# Maternal mortality rate
+# Maternal mortality rate – the number of maternal deaths per 1,000 women of reproductive age in the population (generally defined as 15–44 years of age).
+function maternal_mortality(num_maternal_deaths::Int)
+	maternal_mortality_formula = num_maternal_deaths/1000 * 100
+	println("Maternal Mortality Rate=>",maternal_mortality_formula,"%")
+end
+
+
+# Infant mortality rate
+# Infant mortality rate – the number of deaths of children less than 1 year old per 1,000 live births.
+function infant_mortality(num_infant_deaths::Int)
+	infant_mortality_formula = num_infant_deaths/100000 * 100
+	println("Infant Mortality Rate=>",infant_mortality_formula,"%")
+end
+
+
+# Child mortality rate
+# # Child mortality rate: the number of deaths of children less than 5 years old per 1,000 live births.
+function child_mortality(num_child_deaths::Int)
+	infant_mortality_formula = num_child_deaths/100000 * 100
+	println("Infant Mortality Rate=>",infant_mortality_formula,"%")
+end
+
+
+
 
 
 
