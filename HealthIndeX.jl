@@ -15,8 +15,10 @@
 
 module HealthIndeX
 
-export bmi,bodymassindex,bai,bodyadiposeindex,bsi,bodyshapeindex,tbw,totalbodywater,corpulence_index,pignetindex,bbi,bodybuildindex,
-perinatal_mortality,infant_mortality,child_mortality,maternal_mortality,maternal_mortality_ratio
+export bmi,bai,bsi,tbw,bbi
+export bodymassindex,bodyadiposeindex,bodyshapeindex,totalbodywater,corpulence_index,pignetindex,bodybuildindex,waist_to_hip,heelballindex
+export perinatal_mortality,infant_mortality,child_mortality,maternal_mortality,maternal_mortality_ratio
+export birthrate,crudebirthrate,mortalityrate,fertilityrate,populationgrowth
 
 #Body Mass Index
 #that abdominal obesity is defined as a waist–hip ratio above 0.90 for males and above 0.85 for females, or a body mass index (BMI) above 30.0
@@ -210,6 +212,42 @@ end
 function child_mortality(num_child_deaths::Int)
 	infant_mortality_formula = num_child_deaths/100000 * 100
 	println("Infant Mortality Rate=>",infant_mortality_formula,"%")
+end
+
+
+
+#For Heel-Ball Index:(Breadth at heel x 100/Breadth at ball)
+function heelballindex(heel_breadth,ball_breadth)
+    heelIndex = heel_breadth * 100/ball_breadth
+    return heelIndex
+end
+
+#Health Indicators For General Population
+#For BirthRate
+function birthrate(number_of_live_births::Int,population::Int)
+    birthRate = number_of_live_births/population * 1000
+    return birthRate
+end
+#For Crude Birth Rate
+function crudebirthrate(number_of_live_births::Int,population_at_mid_year::Int)
+        crudeBirth = number_of_live_births/population_at_mid_year  * 1000
+        return crudeBirth
+end
+
+#For Mortality Rate
+function mortalityrate(number_of_deaths::Int,population::Int)
+        mortality = number_of_deaths/population * 1000
+        return mortality
+end
+#For Natural Population Growth
+function populationgrowth(number_of_births::Int,number_of_death::Int)
+        naturalPopGrowth = number_of_births-number_of_death * 1000
+        return naturalPopGrowth
+end
+#Fertility Rate
+function fertilityrate(number_of_births::Int,population_of_women_in_fertilityage::Int)
+        fertilityRate = number_of_births/population_of_women_in_fertilityage * 1000
+        return fertilityRate
 end
 
 
