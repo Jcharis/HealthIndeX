@@ -1,3 +1,4 @@
+# -*- coding: utf-8-*-
 
 ###### Health IndeX #######
      ## Version 0.1 ##
@@ -9,7 +10,7 @@
 # Body water
 # Corpulence index
 # Pignet Index
-
+from __future__ import division
 import math
 
 
@@ -18,7 +19,7 @@ import math
 #Body Mass Index
 #that abdominal obesity is defined as a waist–hip ratio above 0.90 for males and above 0.85 for females, or a body mass index (BMI) above 30.0
 def bmi(mass,height):
-	bmi_formula = mass/height**2
+	bmi_formula = mass//height**2
 	if bmi_formula < 18.5 :
 		print("Body Mass Index is => ",bmi_formula)
 		print("BMI Category => Underweight ")
@@ -36,7 +37,7 @@ def bmi(mass,height):
 
 
 def bodymassindex(mass,height):
-	bmi_formula = mass/height**2
+	bmi_formula = float(mass)/height**2
 	if bmi_formula < 18.5 :
 		print("Body Mass Index is => ",bmi_formula)
 		print("BMI Category => Underweight ")
@@ -208,6 +209,41 @@ def infant_mortality(num_infant_deaths):
 def child_mortality(num_child_deaths):
 	infant_mortality_formula = num_child_deaths/100000 * 100
 	print("Infant Mortality Rate=>",infant_mortality_formula,"%")
+
+
+#For Heel-Ball Index:(Breadth at heel x 100/Breadth at ball)
+def heelballindex(heel_breadth,ball_breadth):
+    heelIndex = heel_breadth * 100/ball_breadth
+    return heelIndex
+
+
+#Health Indicators For General Population
+#For BirthRate
+def birthrate(number_of_live_births,population):
+    birthRate = number_of_live_births/population * 1000
+    return birthRate
+
+#For Crude Birth Rate
+def crudebirthrate(number_of_live_births,population_at_mid_year):
+	crudeBirth = number_of_live_births/population_at_mid_year  * 1000
+	return crudeBirth
+
+
+#For Mortality Rate
+def mortalityrate(number_of_deaths,population):
+	mortality = number_of_deaths/population * 1000
+	return mortality
+
+#For Natural Population Growth
+def populationgrowth(number_of_births,number_of_death):
+	naturalPopGrowth = number_of_births-number_of_death * 1000
+	return naturalPopGrowth
+
+#Fertility Rate
+def fertilityrate(number_of_births,population_of_women_in_fertilityage):
+	fertilityRate = number_of_births/population_of_women_in_fertilityage * 1000
+	return fertilityRate
+
 
 
 
